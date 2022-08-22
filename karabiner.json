@@ -15,29 +15,33 @@
                     "mouse_motion_to_scroll.speed": 100
                 },
                 "rules": [
-                                    {
-                                        "description": "Delete left",
-                                        "manipulators": [
-                                            {
-                                                "from": {
-                                                    "modifiers": [
-                                                      "left_command",
-                                                      "delete_or_backspace"
-                                                    ]
-                                                },
-                                                "to": [
-                                                    {
-                                                        "modifiers": [
-                                                          "left_option",
-                                                          "delete_or_backspace"
-                                                        ]
-                                                    }
-                                                ],
-                                                "type": "basic"
-                                            }
-                                        ]
-                                    }
+                  {
+                      "description": "Delete left",
+                      "manipulators": [
+                          {
+                              "from": {
+                                "simultaneous": [
+                                  {
+                                      "key_code": "left_command"
+                                  },
+                                  {
+                                      "key_code": "delete_or_backspace"
+                                  }
                                 ]
+                              },
+                              "to": [
+                                {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": [
+                                      "left_option"
+                                    ]
+                                }
+                              ],
+                              "type": "basic"
+                          }
+                      ]
+                  }
+                ]
             },
             "devices": [
                 {
